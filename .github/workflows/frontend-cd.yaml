@@ -100,7 +100,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build \
-            --build-arg REACT_APP_MOVIE_API_URL=http://localhost:5000 \
+            --build-arg REACT_APP_MOVIE_API_URL=${{ secrets.BACKEND_API_URL }} \
             --tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
             .
 
